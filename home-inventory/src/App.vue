@@ -24,12 +24,12 @@ import { RouterLink, RouterView } from 'vue-router'
 <style>
 body {
   margin: 0;
-  background-color: rgb(69, 61, 80);
+  background-color: rgb(50, 45, 58);
   color: rgb(214, 206, 196);
 }
 
 nav {
-  background-color: rgb(48, 34, 52);
+  background-color: rgb(29, 25, 31);
   overflow: hidden;
   text-align: center;
 }
