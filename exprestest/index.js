@@ -32,13 +32,20 @@ app.get('/sub/:subdir', (req, res) => {
     res.send(`<h1>In the ${subdir} directory</h1>`)
 })
 
-app.get('*', (req, res) => {
-    console.log("We got a new request that failed on page /??")
-    res.send('<h1 style="color: red">Error 404, not a valid path.</h1>')
-})
 
-
-app.listen(3000, () =>
+// This is a test GET method that is going to be used by the front end.
+// When the front end calls this GET method, eventually, this backend component will talk to the MongoDB server to access the real data base.
+//For now, this snippet will pretend to be the database by sending a hard-coded JSPON object response.
+app.get('/ingredients', (req, res) => {
+    console.log("GET /ingredients requested.")
+    res.json({"foo": "bar"});
+    })
+    
+    app.get('*', (req, res) => {
+        console.log("We got a new request that failed on page /??")
+        res.send('<h1 style="color: red">Error 404, not a valid path.</h1>')
+    })
+    app.listen(3000, () =>
     console.log(`App listening on port 3000!`)
 );
 
