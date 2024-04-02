@@ -1,12 +1,12 @@
 <script setup>
-    import { ref } from 'vue'
-    import axios from 'axios'
-    import { useIngredientStore } from '@/stores/ingredient';
+import { ref } from 'vue'
+import axios from 'axios'
+import { useIngredientStore } from '@/stores/ingredient';
 
-    const ingredientStore = useIngredientStore()
+const ingredientStore = useIngredientStore()
 
 //AXIOS call to back ennd
-    //localhost:3000/ingredients
+//localhost:3000/ingredients
 async function fetch_remote_data() {
   const options = {
     method: 'GET',
@@ -28,20 +28,16 @@ async function fetch_remote_data() {
 
 </script>
 <template>
-    Supplies
-    <form @submit.prevent="fetch_remote_data">
+  Supplies
+  <form @submit.prevent="fetch_remote_data">
     <div>
-      <label for="">Start Date</label>
-      <input type="date"  />
-    </div>
-    <div>
-      <button type="submit">Submit</button>
+      <button type="submit">View</button>
     </div>
   </form>
-  <div>
 
-    hey
-    {{ ingredientStore.ingredient }}
+  <div class="item" v-for="x in ingredientStore.ingredient">
+    <p>ID<br>{{ x.id }} </p>
+    <p>Item<br>{{ x.item }} </p>
+    <p>Status<br>{{ x.status }}</p>
   </div>
-
 </template>

@@ -79,4 +79,25 @@ a.router-link-exact-active {
 .center {
   text-align: center;
 }
+
+
+
+.item {
+    color: black;
+    overflow: hidden;
+    background-color: rgb(169, 169, 156);
+    margin: 16px;
+    text-align: center;
+}
+
+.item p {
+    float: left;
+    height: 40px;
+    background-color: rgb(239, 238, 226);
+    padding: 20px 16px;
+    text-align: center;
+    margin: 6px;
+    border-radius: 5px 15px;
+    box-shadow: 5px 10px rgb(102, 106, 93);
+}
 </style>

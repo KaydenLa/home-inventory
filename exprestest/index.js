@@ -4,6 +4,13 @@ const app = express();
 
 var cors = require('cors')
 
+const bodyParser = require('body-parser');
+const { randomInt } = require("crypto");
+// Middleware to parse JSON bodies
+app.use(bodyParser.json());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 //console.log(app);
 //app.use((req, res) => {
 //    console.log("We got a new request!");
@@ -30,7 +37,7 @@ app.post('/text', (req, res) => {
 
 app.get('/sub/:subdir', (req, res) => {
     console.log((req.params));
-    const {subdir} = req.params;
+    const { subdir } = req.params;
     res.send(`<h1>In the ${subdir} directory</h1>`)
 })
 
@@ -43,13 +50,32 @@ app.get('/ingredients', cors(), (req, res) => {
         [{ id: '1', item: "Sandwich Bread", status: "full" }, { id: '2', item: "Tortila", status: "Low" }, { id: '3', item: "Elbow noodles", status: "Half" }, { id: '4', item: "Rice", status: "Half" }]
 
     );
-    })
-    
-    app.get('*', (req, res) => {
-        console.log("We got a new request that failed on page /??")
-        res.send('<h1 style="color: red">Error 404, not a valid path.</h1>')
-    })
-    app.listen(3000, () =>
+})
+
+app.post('/ingredients', cors(), (req, res) => {
+    console.log("POST /ingredients requested.")
+    const { itemName, itemStatus } = req.query;
+    const itemId = randomInt(1000)
+
+  // Output the item ID and name to the console
+  console.log(`Item ID: ${itemId}, Item Name: ${itemName}, Item Status: ${itemStatus}`);
+  console.log(req.query);
+    res.json(
+        {
+            data: {
+                id: itemId,
+                item: itemName,
+                status: itemStatus
+            }
+        }
+    );
+})
+
+app.get('*', (req, res) => {
+    console.log("We got a new request that failed on page /??")
+    res.send('<h1 style="color: red">Error 404, not a valid path.</h1>')
+})
+app.listen(3000, () =>
     console.log(`App listening on port 3000!`)
 );
 
