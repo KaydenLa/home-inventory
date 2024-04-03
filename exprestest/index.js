@@ -55,7 +55,13 @@ app.get('/ingredients', cors(), (req, res) => {
 app.post('/ingredients', cors(), (req, res) => {
     console.log("POST /ingredients requested.")
     const { itemName, itemStatus } = req.query;
-    const itemId = randomInt(1000)
+    var itemId = req.query.itemId;
+
+    //Aisgn an ID if not provided by query
+    if (itemId === ""){
+        itemId = randomInt(1000)
+    }
+    
 
   // Output the item ID and name to the console
   console.log(`Item ID: ${itemId}, Item Name: ${itemName}, Item Status: ${itemStatus}`);

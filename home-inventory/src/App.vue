@@ -67,8 +67,6 @@ nav a {
   color: rgb(30, 30, 30);
   padding: 24px 20px;
   text-decoration: bold;
-
-
 }
 
 a.router-link-exact-active {
@@ -99,5 +97,33 @@ a.router-link-exact-active {
     margin: 6px;
     border-radius: 5px 15px;
     box-shadow: 5px 10px rgb(102, 106, 93);
+}
+@media only screen and (max-width: 450px) {
+
+  nav {
+    overflow:visible;
+  }
+
+  .nav-right a {
+    float: none;
+    width: 100vw;
+    margin: 0;
+    display: block;
+    height: 2vh;
+  }
+  .nav-left a {
+    float: none;
+    width: 100vw;
+    margin: 0;
+    display: block;
+    height: 2vh;
+  }
+  .nav-left a:hover {
+    height: 3vh;
+}
+.nav-right a:hover {
+  height: 3vh;
+}
+ 
 }
 </style>
