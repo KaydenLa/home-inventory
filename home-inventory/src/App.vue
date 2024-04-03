@@ -36,14 +36,16 @@ nav {
 
 .nav-left a {
   float: left;
-  padding: 24px 16px;
+  height: 10vh;
+  padding: 0px 20px;
   background-color: rgb(143, 163, 124);
 
 }
 
 .nav-right a {
   float: right;
-  padding: 24px 16px;
+  height: 10vh;
+  padding: 0px 20px;
   background-color: rgb(143, 163, 124);
 
 }
@@ -52,12 +54,13 @@ nav a {
   color: rgb(56, 45, 64);
   text-decoration: none;
   font-size: larger;
+  align-content: center;
 }
 
 .nav-right a:hover {
   background-color: rgb(254, 255, 182);
   color: rgb(30, 30, 30);
-  padding: 24px 20px;
+  padding: 0px 24px;
   text-decoration: bold;
 
 }
@@ -65,7 +68,7 @@ nav a {
 .nav-left a:hover {
   background-color: rgb(254, 255, 182);
   color: rgb(30, 30, 30);
-  padding: 24px 20px;
+  padding: 0px 24px;
   text-decoration: bold;
 }
 
@@ -78,8 +81,6 @@ a.router-link-exact-active {
   text-align: center;
 }
 
-
-
 .item {
     color: black;
     overflow: hidden;
@@ -90,13 +91,20 @@ a.router-link-exact-active {
 
 .item p {
     float: left;
-    height: 40px;
+    height: 6vh;
     background-color: rgb(239, 238, 226);
     padding: 20px 16px;
     text-align: center;
     margin: 6px;
     border-radius: 5px 15px;
     box-shadow: 5px 10px rgb(102, 106, 93);
+}
+.item input{
+  width: 100%;
+}
+.item button{
+  width: 100%;
+  height: 80%;
 }
 @media only screen and (max-width: 450px) {
 
@@ -107,22 +115,24 @@ a.router-link-exact-active {
   .nav-right a {
     float: none;
     width: 100vw;
-    margin: 0;
     display: block;
-    height: 2vh;
+    height: 8vh;
+    padding: 0px 20px;
   }
   .nav-left a {
     float: none;
     width: 100vw;
-    margin: 0;
     display: block;
-    height: 2vh;
+    height: 8vh;
+    padding: 0px 20px;
   }
   .nav-left a:hover {
-    height: 3vh;
+    height: 9vh;
+    padding: 0px 20px;
 }
 .nav-right a:hover {
-  height: 3vh;
+  height: 9vh;
+  padding: 0px 20px;
 }
  
 }

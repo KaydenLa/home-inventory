@@ -127,15 +127,15 @@ async function post_data_add_item() {
             <form @submit.prevent="post_data_add_item">
                 <p>
                     <label>Item ID</label>
-                    <input type="number" v-model="form_input.addItemId"  placeholder="Required" />
+                    <input type="number" v-model="form_input.addItemId"  placeholder="Required" required />
                 </p>
                 <p>
                     <label>Item Name</label>
-                    <input type="text" v-model="form_input.addItemName" placeholder="Optional" required />
+                    <input type="text" v-model="form_input.addItemName" placeholder="Optional" />
                 </p>
                 <p>
                     <label>Item Status</label>
-                    <input type="text" v-model="form_input.addItemStatus" placeholder="Optional" required />
+                    <input type="text" v-model="form_input.addItemStatus" placeholder="Optional" />
                 </p>
                 <p>
                     <button type="submit">Update Existing</button>
@@ -185,10 +185,6 @@ p{
         width: 100vw;
     }
 
-    button {
-        width: 100%;
-    }
-
     .buttonDiv button {
         width: 85vw;
         height: 4vh;
@@ -198,6 +194,9 @@ p{
     .buttonDiv {
         text-align: center;
         padding-bottom: 7vh;
+    }
+    .item{
+        margin-bottom: 5vh;
     }
 }
 </style>
