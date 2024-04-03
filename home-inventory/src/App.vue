@@ -112,27 +112,28 @@ a.router-link-exact-active {
     overflow:visible;
   }
 
+
   .nav-right a {
     float: none;
     width: 100vw;
     display: block;
     height: 8vh;
-    padding: 0px 20px;
+    padding: 0;
   }
   .nav-left a {
     float: none;
     width: 100vw;
     display: block;
     height: 8vh;
-    padding: 0px 20px;
+    padding: 0;
   }
   .nav-left a:hover {
     height: 9vh;
-    padding: 0px 20px;
+    padding: 0;
 }
 .nav-right a:hover {
   height: 9vh;
-  padding: 0px 20px;
+    padding: 0;
 }
  
 }

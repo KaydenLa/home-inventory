@@ -48,7 +48,6 @@ async function post_data_update_item() {
             itemName: form_input.value.itemName,
             itemStatus: form_input.value.itemStatus,
         },
-
     };
 
     try {
@@ -108,15 +107,15 @@ async function post_data_add_item() {
             <form @submit.prevent="post_data_add_item">
                 <p>
                     <label>Item ID</label>
-                    <input type="number" v-model="form_input.itemId"  placeholder="Optional" />
+                    <input type="number" v-model="form_input.addItemId" placeholder="Optional" />
                 </p>
                 <p>
                     <label>Item Name</label>
-                    <input type="text" v-model="form_input.itemName" placeholder="Required" required />
+                    <input type="text" v-model="form_input.addItemName" placeholder="Required" required />
                 </p>
                 <p>
                     <label>Item Status</label>
-                    <input type="text" v-model="form_input.itemStatus" placeholder="Required" required />
+                    <input type="text" v-model="form_input.addItemStatus" placeholder="Required" required />
                 </p>
                 <p>
                     <button type="submit">Add Item</button>
@@ -124,18 +123,18 @@ async function post_data_add_item() {
             </form>
         </div>
         <div class="item">
-            <form @submit.prevent="post_data_add_item">
+            <form @submit.prevent="post_data_update_item">
                 <p>
                     <label>Item ID</label>
-                    <input type="number" v-model="form_input.addItemId"  placeholder="Required" required />
+                    <input type="number" v-model="form_input.itemId" placeholder="Required" required />
                 </p>
                 <p>
                     <label>Item Name</label>
-                    <input type="text" v-model="form_input.addItemName" placeholder="Optional" />
+                    <input type="text" v-model="form_input.itemName" placeholder="Optional" />
                 </p>
                 <p>
                     <label>Item Status</label>
-                    <input type="text" v-model="form_input.addItemStatus" placeholder="Optional" />
+                    <input type="text" v-model="form_input.itemStatus" placeholder="Optional" />
                 </p>
                 <p>
                     <button type="submit">Update Existing</button>
@@ -154,9 +153,10 @@ async function post_data_add_item() {
 </template>
 
 <style>
-p{
+p {
     width: 15vw;
 }
+
 .form-container {
     display: flex;
 }
@@ -183,6 +183,7 @@ p{
 
     .form {
         width: 100vw;
+        padding-left: 0;
     }
 
     .buttonDiv button {
@@ -193,9 +194,11 @@ p{
 
     .buttonDiv {
         text-align: center;
+        justify-content: center;
         padding-bottom: 7vh;
     }
-    .item{
+
+    .item {
         margin-bottom: 5vh;
     }
 }
