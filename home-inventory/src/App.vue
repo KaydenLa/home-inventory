@@ -82,36 +82,37 @@ a.router-link-exact-active {
 }
 
 .item {
-    color: black;
-    overflow: hidden;
-    background-color: rgb(169, 169, 156);
-    margin: 16px;
-    text-align: center;
+  color: black;
+  overflow: hidden;
+  background-color: rgb(169, 169, 156);
+  margin: 16px;
+  text-align: center;
 }
 
 .item p {
-    float: left;
-    height: 6vh;
-    background-color: rgb(239, 238, 226);
-    padding: 20px 16px;
-    text-align: center;
-    margin: 6px;
-    border-radius: 5px 15px;
-    box-shadow: 5px 10px rgb(102, 106, 93);
+  float: left;
+  height: 6vh;
+  background-color: rgb(239, 238, 226);
+  padding: 20px 16px;
+  text-align: center;
+  margin: 6px;
+  border-radius: 5px 15px;
+  box-shadow: 5px 10px rgb(102, 106, 93);
 }
-.item input{
+
+.item input {
   width: 100%;
 }
-.item button{
+
+.item button {
   width: 100%;
   height: 80%;
 }
+
 @media only screen and (max-width: 450px) {
-
   nav {
-    overflow:visible;
+    overflow: visible;
   }
-
 
   .nav-right a {
     float: none;
@@ -120,6 +121,7 @@ a.router-link-exact-active {
     height: 8vh;
     padding: 0;
   }
+
   .nav-left a {
     float: none;
     width: 100vw;
@@ -127,14 +129,15 @@ a.router-link-exact-active {
     height: 8vh;
     padding: 0;
   }
+
   .nav-left a:hover {
     height: 9vh;
     padding: 0;
-}
-.nav-right a:hover {
-  height: 9vh;
+  }
+
+  .nav-right a:hover {
+    height: 9vh;
     padding: 0;
-}
- 
+  }
 }
 </style>

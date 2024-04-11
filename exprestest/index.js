@@ -57,7 +57,8 @@ app.post('/ingredients', cors(), (req, res) => {
     const { itemName, itemStatus } = req.query;
     var itemId = req.query.itemId;
 
-    //Aisgn an ID if not provided by query
+    //Assign an ID if not provided by query
+    //#When database works, need to change this to only assign IDs that are not already assigned.
     if (itemId === ""){
         itemId = randomInt(1000)
     }
@@ -84,8 +85,3 @@ app.get('*', (req, res) => {
 app.listen(3000, () =>
     console.log(`App listening on port 3000!`)
 );
-
-//npm instal express
-//npm install -g nodemon
-//%appdata% -> npm -> remove nodemon.ps1
-//nodemon -v

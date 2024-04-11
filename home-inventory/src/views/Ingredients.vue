@@ -16,7 +16,6 @@ const form_input = ref(
     }
 );
 
-
 //AXIOS call to back end
 //localhost:3000/ingredients
 async function fetch_remote_data() {
@@ -75,7 +74,6 @@ async function post_data_add_item() {
             itemName: form_input.value.addItemName,
             itemStatus: form_input.value.addItemStatus,
         },
-
     };
 
     try {
@@ -87,8 +85,8 @@ async function post_data_add_item() {
         console.error(error);
     }
 }
-
 </script>
+
 <template>
     <div class="center">
         <h1>Ingredients</h1>
